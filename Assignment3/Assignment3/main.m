@@ -21,9 +21,6 @@ int main(int argc, const char * argv[]) {
     // Track player score
     ScoreKeeper *myScore = [[ScoreKeeper alloc]init];
     
-    // Track player time
-    QuestionManager *questionArray = [[QuestionManager alloc] init];
-    
     // To create random questions
     QuestionFactory *questionFactory = [[QuestionFactory alloc] init];
     
@@ -40,19 +37,16 @@ int main(int argc, const char * argv[]) {
         Question *theQuestion = [questionFactory generateRandomQuestion];
         NSLog(@"%@", theQuestion.question);
         
-        // Add question for timer
-        [questionArray.questions addObject:theQuestion];
-        
         // Read player answer
         NSString *answerString = [inputHandler getUserInput];
         
-        // Check is using wants to quit playing
+        // When put "quit"
         if ([answerString isEqualToString:@"quit"]){
             NSLog(@"%@", [myScore getTheScore]);
             break;
         }
         
-        // Otherwise check answer
+        // check answer
         else {
             // Convert anser to integer, check answer for correctness, output feedback
             float playerAnswer = [answerString floatValue];
@@ -67,8 +61,6 @@ int main(int argc, const char * argv[]) {
                 NSLog(@"Wrong!");
             }
             
-            // Log current score and time stats
-            NSLog(@"%@", [myScore getTheScore]);
             
         }
         
