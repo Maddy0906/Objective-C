@@ -8,80 +8,74 @@
 
 #import <Foundation/Foundation.h>
 #import "inputHandler.h"
-
-@interface Maths : NSObject
--(int) getRandomNumber;
--(void) add: (int) result;
-
-@end
-
-@implementation Maths
-//returns a random number
--(int) getRandomNumber{
-    return (int)arc4random_uniform(100);
-}
-
-@end
-
-@interface question: NSObject
-@property int accumulator;
-@end
-
-@implementation question{
-    int accumulator;
-}
--(void) setAccumulator: (int) value;
-{     accumulator = value;  }
--(void) clear
-{      accumulator = 0;  }
--(int) accumulator
-{     return accumulator;  }
--(void) add: (int) value1, value2;
-{     accumulator = value1 + value2;  }
-
-@end
+#import "Question.h"
+#import "ScoreKeeper.h"
+#import "QuestionManager.h"
+#import "QuestionFactory.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        Maths *MathStuff;
-        MathStuff = [[Maths alloc] init];
+    // Boolean to control loop
+    BOOL runLoop = true;
+    
+    // Track player score
+    ScoreKeeper *myScore = [[ScoreKeeper alloc]init];
+    
+    // Track player time
+    QuestionManager *questionArray = [[QuestionManager alloc] init];
+    
+    // To create random questions
+    QuestionFactory *questionFactory = [[QuestionFactory alloc] init];
+    
+    // Print greeting and request
+    NSLog(@"MATHS!\n");
+    
+    // Start operations loop
+    while (runLoop) {
         
-        int num1 = [MathStuff getRandomNumber];
-        int num2 = [MathStuff getRandomNumber];
-        int result;
+        // Ask player if they would like to play a game
+        NSLog(@"Type quit to exit:\n");
         
-        question *AdditionQuestion = [[question alloc]init];
-        int n, right, wrong = 0;
+        // Pose a random math question
+        Question *theQuestion = [questionFactory generateRandomQuestion];
+        NSLog(@"%@", theQuestion.question);
         
-        NSLog(@"MATHS!!");
+        // Add question for timer
+        [questionArray.questions addObject:theQuestion];
         
-        while (n > 5) {
-            [AdditionQuestion add: num1,num2];
-            NSLog(@"%i + %i = ?", num1, num2);
-            [inputHandler getUserInput];
-            
-            if (result == num1+num2) {
-                right ++;
-                NSLog(@"Right!");
-            }else{
-                wrong ++;
-                NSLog(@"Wrong!");
-                
-            }
-            
-            ++n;
+        // Read player answer
+        NSString *answerString = [inputHandler getUserInput];
+        
+        // Check is using wants to quit playing
+        if ([answerString isEqualToString:@"quit"]){
+            NSLog(@"%@", [myScore getTheScore]);
+            break;
         }
         
-        NSLog(@"Your score was %i right, %i wrong " , right , wrong);
-        if (right == 4)
-            NSLog(@"---- 100%%");
-        else if (right == 3)
-            NSLog(@"---- 80%%");
-        else if (right == 2)
-            NSLog (@"---- 60%%");
-        else if (right ==1)
-            NSLog(@"---- 20%%");
+        // Otherwise check answer
+        else {
+            // Convert anser to integer, check answer for correctness, output feedback
+            float playerAnswer = [answerString floatValue];
+            
+            if(playerAnswer == theQuestion.answer) {
+                myScore.numOfCorrectAnswers = myScore.numOfCorrectAnswers + 1;
+                NSLog(@"Right!");
+                
+            }
+            else {
+                myScore.numOfIncorrectAnswers = myScore.numOfIncorrectAnswers + 1;
+                NSLog(@"Wrong!");
+            }
+            
+            // Log current score and time stats
+            NSLog(@"%@", [myScore getTheScore]);
+            
+        }
+        
+        // continue in while loop
+        continue;
         
     }
-    return 0;
+    
 }
+return 0;}
