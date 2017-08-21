@@ -10,4 +10,20 @@
 
 @implementation AdditionQuestion
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        [self generateQuestion];
+    }
+    return self;
+}
+
+-(void)generateQuestion {
+    
+    // Addition question and answer
+    super.question = [NSString stringWithFormat:@"%.f + %.f?", super.num1, super.num2];
+    super.answer = super.num1 + super.num2;
+    
+}
 @end
