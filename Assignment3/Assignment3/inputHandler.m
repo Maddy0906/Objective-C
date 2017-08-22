@@ -9,6 +9,9 @@
 #import "inputHandler.h"
 
 @implementation inputHandler
+//+(NSString *) getUserInput:(int) maxlength{
+//   
+//}
 
 +(NSString *) getUserInput{
     char myStr[256];
