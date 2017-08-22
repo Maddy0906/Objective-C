@@ -10,5 +10,12 @@
 
 @interface AdditionQuestion : Question
 
+//@property (nonatomic) NSString *question;
+//@property (assign) float answer;
+//@property (assign) int num1;
+//@property (assign) int num2;
+//
+//-(instancetype)init;
+
 
 @end
