@@ -15,7 +15,7 @@ int main(int argc, const char * argv[]) {
     @autoreleasepool {
         
         //Initialize Input collector and Contact list.
-        InputCollector *collectorPrompt = [[InputCollector alloc]init];
+        InputCollector *inputCollector = [[InputCollector alloc]init];
         ContactList *contactList = [[ContactList alloc] init];
         
         // Boolean to control loop
@@ -23,32 +23,34 @@ int main(int argc, const char * argv[]) {
         
         while (runLoop) {
         // display and ask menu
+            NSLog(@"What would you like to do next?\n");
         NSLog(@"new - Create a new contact  \n");
         NSLog(@"list - List all contacts \n");
         NSLog(@"quit - Exit Application \n");
-        NSLog(@"> _ \n");
-            
-        NSString *userString = [collectorPrompt inputForPrompt:(@"What would you like to do next?\n")];
+        NSString *userString = [inputCollector inputForPrompt:(@"> _ ")];
 
         
         //each case statements
         if([userString isEqualToString:@"new"]){
             NSLog(@"Add new contact");
-            NSString *fullNameInput = [collectorPrompt inputForPrompt:(@"What is the full name?")];
-            NSString *emailInput = [collectorPrompt inputForPrompt:(@"What is the email?")];
+            NSString *fullNameInput = [inputCollector inputForPrompt:(@"What is the full name?")];
+            NSString *emailInput = [inputCollector inputForPrompt:(@"What is the email?")];
+            
             
             //Create a new contact and then pass in the full name/ email input.
-            Contact *newContact = [[Contact alloc] initContact:fullNameInput email:emailInput];
+            Contact *newContact = [[Contact alloc]init];
+            newContact.name = fullNameInput;
+            newContact.email = emailInput;
             
             //Add the new contact object to the ContactList Array.
             [contactList addContact:newContact];
             
-        }else if([userString isEqualToString:@"list"]){
+        }
+        else if([userString isEqualToString:@"list"]){
             NSLog(@"Your contacts list");
             [contactList dispContactList];
-            
         }
-        
+            
         // When input "quit" command
         if ([userString isEqualToString:@"quit"]){
             break;

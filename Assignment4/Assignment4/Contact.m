@@ -11,7 +11,7 @@
 @implementation Contact
 
 
--(id) initContact:(NSString *)name email:(NSString*)email {
+-(id) initContactName:(NSString *)name email:(NSString*)email {
     
     self = [super init];
     if (self) {
