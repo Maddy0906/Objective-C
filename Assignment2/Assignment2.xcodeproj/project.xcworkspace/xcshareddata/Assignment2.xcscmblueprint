@@ -1,14 +1,18 @@
 {
-  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "6E6B505862B8F5A67ED38DA6265E8798872E97F3",
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "6E6B505862B8F5A67ED38DA6265E8798872E97F3+++824D0D2",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
 
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
-    "6E6B505862B8F5A67ED38DA6265E8798872E97F3" : 9223372036854775807
+    "6E6B505862B8F5A67ED38DA6265E8798872E97F3+++824D0D2" : 9223372036854775807,
+    "6E6B505862B8F5A67ED38DA6265E8798872E97F3+++B9C7AE9" : 9223372036854775807,
+    "6E6B505862B8F5A67ED38DA6265E8798872E97F3+++84BDC47" : 9223372036854775807
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "4722178B-20BA-412C-A25D-E5AE12504EA2",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
-    "6E6B505862B8F5A67ED38DA6265E8798872E97F3" : ""
+    "6E6B505862B8F5A67ED38DA6265E8798872E97F3+++824D0D2" : "Objective-C\/",
+    "6E6B505862B8F5A67ED38DA6265E8798872E97F3+++B9C7AE9" : "",
+    "6E6B505862B8F5A67ED38DA6265E8798872E97F3+++84BDC47" : ""
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "Assignment2",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
@@ -17,12 +21,17 @@
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Maddy0906\/Objective-C.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "6E6B505862B8F5A67ED38DA6265E8798872E97F3"
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "6E6B505862B8F5A67ED38DA6265E8798872E97F3+++824D0D2"
     },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Maddy0906\/Objective-C.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "6E6B505862B8F5A67ED38DA6265E8798872E97F3"
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "6E6B505862B8F5A67ED38DA6265E8798872E97F3+++84BDC47"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Maddy0906\/Objective-C.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "6E6B505862B8F5A67ED38DA6265E8798872E97F3+++B9C7AE9"
     }
   ]
 }

@@ -10,9 +10,11 @@
 
 @interface Contact : NSObject
 
+@property NSString* contactID;
 @property NSString* name;
 @property NSString* email;
 
--(id) initContact:(NSString *)name email:(NSString*)email;
+-(id) initContactName:(NSString *)name email:(NSString*)email;
+//- (NSString *)description;
 
 @end

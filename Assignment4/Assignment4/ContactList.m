@@ -7,33 +7,34 @@
 //
 
 #import "ContactList.h"
-#import "Contact.h"
 
 @implementation ContactList
 
--(id) init {
+-(instancetype) init {
     self = [super init];
     if (self) {
-        self.listContacts = [[NSMutableArray alloc] init];
+        _contactList = [[NSMutableArray alloc] init];
     }
     return self;
 }
 
 -(void)addContact:(Contact *)newContact{
-    [self.listContacts addObject:newContact];
+    newContact.contactID = [NSString stringWithFormat:@"%lu", (unsigned long)[self.contactList count]];
+    [self.contactList addObject:newContact];
     NSLog(@"You added: %@", newContact);
 }
+
 
 
 //display each contact like this "ID#: <full name> (email)"
 -(void) dispContactList{
     NSString *description = @"";
-    for (Contact *contact in self.listContacts) {
-        description = [description stringByAppendingString:[NSString stringWithFormat:@"%lu: <%@> (%@)\n", (unsigned long)[self.listContacts indexOfObject:contact], contact.name, contact.email]];
+    for (Contact *contact in self.contactList) {
+        description = [description stringByAppendingString:[NSString stringWithFormat:@"%lu: <%@> (%@)\n", (unsigned long)[self.contactList indexOfObject:contact], contact.name, contact.email]];
         NSLog(@"%@", description);
         
     }
 }
 
-
 @end
+
