@@ -33,9 +33,15 @@
     //avarage time
     NSUInteger quesionsCount = [self.questions count];
     
+    /* get the length of array method */
+    // self.questions.count
+    // [self.questions count]
+    // sizeof(_questions) / sizeof(_questions[0]);
+    
     if (quesionsCount !=0) {
         
         averageTime = totalTime / quesionsCount;
+        
     }
 
     
