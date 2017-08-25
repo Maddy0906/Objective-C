@@ -31,12 +31,9 @@
     }
     
     //avarage time
-    int quesionsCount = (sizeof _questions) / (sizeof _questions[0]);
+    NSUInteger quesionsCount = [self.questions count];
     
     if (quesionsCount !=0) {
-        NSLog(@"averageTime:%d\n",averageTime);
-        NSLog(@"totalTime:%d\n",totalTime);
-        NSLog(@"questions:%d\n", quesionsCount);
         
         averageTime = totalTime / quesionsCount;
     }

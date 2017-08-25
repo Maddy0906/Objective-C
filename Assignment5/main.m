@@ -40,12 +40,16 @@ int main(int argc, const char * argv[]) {
         Question *theQuestion = [questionFactory generateRandomQuestion];
         NSLog(@"%@", theQuestion.question);
         
+        // add count of quesion
+        [questionArray.questions addObject: theQuestion];
+        
         // Read player answer
         NSString *answerString = [inputHandler getUserInput];
         
         // When put "quit"
         if ([answerString isEqualToString:@"quit"]){
             NSLog(@"%@", [myScore getTheScore]);
+             NSLog(@"%@", [questionArray timeOutput]);
             break;
         }
         
@@ -53,6 +57,7 @@ int main(int argc, const char * argv[]) {
         else {
             // Convert anser to integer, check answer for correctness, output feedback
             float playerAnswer = [answerString floatValue];
+
             
             if(playerAnswer == theQuestion.answer) {
                 myScore.numOfCorrectAnswers = myScore.numOfCorrectAnswers + 1;
@@ -67,7 +72,6 @@ int main(int argc, const char * argv[]) {
             // Log current score and time stats
             NSLog(@"%@", [myScore getTheScore]);
             NSLog(@"%@", [questionArray timeOutput]);
-            
             
         }
         
