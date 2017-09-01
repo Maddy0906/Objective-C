@@ -10,6 +10,12 @@
 
 @interface Kitchen : NSObject
 
-//- (Pizza *)makePizzaWithSize:(PizzaSize)size toppings:(NSArray *)toppings;
+- (Pizza *)makePizzaWithSize:(PizzaSize)size toppings:(NSArray *)toppings;
+
+-(BOOL)kitchen:(Kitchen *)kitchen shouldMakePizzaOfSize:(PizzaSize)size andToppings:(NSArray *)toppings;
+
+-(BOOL)kitchenShouldUpgradeOrder:(Kitchen *)kitchen;
+
+-(void)kitchenDidMakePizza:(Pizza *)pizza;
 
 @end

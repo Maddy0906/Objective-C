@@ -23,6 +23,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		A73C95B91F58D63D00B70377 /* KitchenDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KitchenDelegate.h; sourceTree = "<group>"; };
 		A77FD9C11F52514D0086FF2B /* iOS-Student-PizzaRestaurant-master */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "iOS-Student-PizzaRestaurant-master"; sourceTree = "<group>"; };
 		A77FD9C21F5251960086FF2B /* Pizza.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pizza.h; sourceTree = "<group>"; };
 		A77FD9C31F5251960086FF2B /* Pizza.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pizza.m; sourceTree = "<group>"; };
@@ -62,6 +63,7 @@
 				A77FD9C11F52514D0086FF2B /* iOS-Student-PizzaRestaurant-master */,
 				A77FD9C21F5251960086FF2B /* Pizza.h */,
 				A77FD9C31F5251960086FF2B /* Pizza.m */,
+				A73C95B91F58D63D00B70377 /* KitchenDelegate.h */,
 			);
 			path = Assignment8;
 			sourceTree = "<group>";
