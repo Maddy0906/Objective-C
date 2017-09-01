@@ -16,6 +16,9 @@ int main(int argc, const char * argv[])
 
     @autoreleasepool {
         
+        // Create Kitchen and Managers
+        Kitchen *restaurantKitchen = [[Kitchen alloc] init];
+        
         NSLog(@"Please pick your pizza size and toppings:");
         
         Kitchen *restaurantKitchen = [Kitchen new];
